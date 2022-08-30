@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://172.18.58.80/index.php'
+url = 'http://172.18.58.80/snow/'
 r = requests.get(url)
 print("Get:", r.text)
 
@@ -26,7 +26,7 @@ print(rh.text)
 import scrapy
 class NewSpider(scrapy.Spider):
     name = "new_spider"
-    start_urls = ['http://172.18.58.80/index.html']
+    start_urls = ['http://172.18.58.80/snow/']
     def parse(self, response):
         css_selector = 'img'
         for x in response.css(css_selector):
@@ -37,7 +37,7 @@ class NewSpider(scrapy.Spider):
 
 class NewSpider(scrapy.Spider):
     name= "new_spider"
-    start_urls = ['http://172.18.58.80/index.html']
+    start_urls = ['http://172.18.58.80/snow/']
     def parse(self, response):
         xpath_selector = '//img'
         for x in response.xpath(xpath_selector):
